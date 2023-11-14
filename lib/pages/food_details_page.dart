@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:frenchbreadrestaurant/components/button.dart';
 import 'package:frenchbreadrestaurant/models/bakery.dart';
 import 'package:frenchbreadrestaurant/models/food.dart';
@@ -51,34 +52,35 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
       showDialog(
         context: context,
         barrierDismissible: false,
-        builder: (context) => AlertDialog(
-          backgroundColor: primaryColor,
-          content: const Text(
-            'Sucessfully added to cart',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 18,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          actions: [
-            //okay button
-            IconButton(
-              onPressed: () {
-                //pop once to remove the dialog box
-                Navigator.pop(context);
-                //pop again to go to previous screen
-                Navigator.pop(context);
-              },
-              icon: const Icon(
-                Icons.verified,
-                color: Colors.white,
-                size: 30.0,
+        builder: (context) =>
+            AlertDialog(
+              backgroundColor: primaryColor,
+              content: const Text(
+                'Sucessfully added to cart',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+                textAlign: TextAlign.center,
               ),
-            )
-          ],
-        ),
+              actions: [
+                //okay button
+                IconButton(
+                  onPressed: () {
+                    //pop once to remove the dialog box
+                    Navigator.pop(context);
+                    //pop again to go to previous screen
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.verified,
+                    color: Colors.green,
+                    size: 30.0,
+                  ),
+                )
+              ],
+            ),
       );
     }
   }
@@ -87,10 +89,16 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        systemOverlayStyle: const SystemUiOverlayStyle(
+          statusBarBrightness: Brightness.light,
+        ),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         foregroundColor: Colors.grey[900],
-        title: Text(widget.food.name),
+        title: Text(widget.food.name,
+          style: GoogleFonts.dmSerifDisplay(
+            color: Colors.grey[900],),
+        ),
       ),
       body: Column(
         children: [
