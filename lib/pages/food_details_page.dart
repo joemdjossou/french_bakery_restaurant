@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:frenchbreadrestaurant/components/button.dart';
 import 'package:frenchbreadrestaurant/models/bakery.dart';
 import 'package:frenchbreadrestaurant/models/food.dart';
@@ -73,7 +74,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
               },
               icon: const Icon(
                 Icons.verified,
-                color: Colors.white,
+                color: Colors.green,
                 size: 30.0,
               ),
             )
@@ -87,10 +88,14 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        systemOverlayStyle: const SystemUiOverlayStyle(statusBarBrightness: Brightness.light,),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         foregroundColor: Colors.grey[900],
-        title: Text(widget.food.name),
+        title: Text(widget.food.name,
+          style:  GoogleFonts.dmSerifDisplay(
+              color: Colors.grey[900],),
+        ),
       ),
       body: Column(
         children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:frenchbreadrestaurant/components/button.dart';
 import 'package:frenchbreadrestaurant/components/food_tile.dart';
 import 'package:frenchbreadrestaurant/models/bakery.dart';
@@ -33,7 +34,7 @@ class _MenuPageState extends State<MenuPage> {
 
   @override
   Widget build(BuildContext context) {
-    //NavigationBar icon
+    //status bar brightness
 
     //get the bakery and the menu
     final bakery = context.read<Bakery>();
@@ -41,11 +42,13 @@ class _MenuPageState extends State<MenuPage> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
+        systemOverlayStyle: const SystemUiOverlayStyle(statusBarBrightness: Brightness.light,),
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.grey[800],
         elevation: 0,
-        leading: const Icon(
-          Icons.menu,
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () => Navigator.pushNamed(context, '/cartpage'),
         ),
         title: const Text(
           "Paris",
@@ -184,6 +187,7 @@ class _MenuPageState extends State<MenuPage> {
               bottom: 25.0,
             ),
             padding: const EdgeInsets.all(20.0),
+
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -214,7 +218,7 @@ class _MenuPageState extends State<MenuPage> {
                           height: 10.0,
                         ),
                         Text(
-                          "\$ 19.99",
+                          "\$ 15.99",
                           style: TextStyle(
                             color: Colors.grey[700],
                           ),
@@ -230,10 +234,21 @@ class _MenuPageState extends State<MenuPage> {
                   color: Colors.grey,
                   onPressed: () {
                     setState(() {
-                      heartIcon = const Icon(
-                        Icons.favorite,
-                        color: Colors.redAccent,
-                      );
+                      if(heartIcon.color == Colors.redAccent) {
+                        heartIcon = const Icon(
+                          Icons.favorite_outline,
+                          color: Colors.grey,
+                        );
+                      }else {
+                        heartIcon = const Icon(
+                          Icons.favorite,
+                          color: Colors.redAccent,
+                        );
+                      }
+                      // heartIcon = const Icon(
+                      //   Icons.favorite,
+                      //   color: Colors.redAccent,
+                      // );
                     });
                   },
                 )
