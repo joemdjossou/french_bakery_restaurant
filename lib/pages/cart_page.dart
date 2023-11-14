@@ -78,7 +78,7 @@ class CartPage extends StatelessWidget {
                         onPressed: () => removeFromCart(food, context),
                         icon: Icon(
                           Icons.delete,
-                          color: Colors.red[500],
+                          color: Colors.grey[300],
                         ),
                       ),
                     ),
