@@ -218,7 +218,7 @@ class _MenuPageState extends State<MenuPage> {
                           height: 10.0,
                         ),
                         Text(
-                          "\$ 15.99",
+                          "\$ 4.99",
                           style: TextStyle(
                             color: Colors.grey[700],
                           ),
@@ -238,11 +238,13 @@ class _MenuPageState extends State<MenuPage> {
                         heartIcon = const Icon(
                           Icons.favorite_outline,
                           color: Colors.grey,
+                          size: 20.0,
                         );
                       }else {
                         heartIcon = const Icon(
                           Icons.favorite,
                           color: Colors.redAccent,
+                          size: 30.0,
                         );
                       }
                       // heartIcon = const Icon(

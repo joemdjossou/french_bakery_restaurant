@@ -94,7 +94,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
         ),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        foregroundColor: Colors.grey[900],
+        foregroundColor: primaryColor,
         title: Text(widget.food.name,
           style: GoogleFonts.dmSerifDisplay(
             color: Colors.grey[900],),
@@ -109,9 +109,12 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
               child: ListView(
                 children: [
                   //image
-                  Image.asset(
-                    widget.food.imagePath,
-                    height: 200.0,
+                  Hero(
+                    tag: widget.food.imagePath,
+                    child: Image.asset(
+                      widget.food.imagePath,
+                      height: 200.0,
+                    ),
                   ),
 
                   const SizedBox(
@@ -172,7 +175,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                     height: 10.0,
                   ),
                   Text(
-                    "Often called “Breakfast Pastries”, it is misleading as in France we enjoy them both for breakfast but also for tea-break. Made in two batches early morning and mid afternoon you always get fresh croissants, pain au chocolat, pains au lait, apple turnover etc… prices will vary between usually \$18 a brioche to up to \$20.50 for a croissant aux amandes",
+                    widget.food.description,
                     style: TextStyle(
                       color: Colors.grey[600],
                       fontSize: 14,

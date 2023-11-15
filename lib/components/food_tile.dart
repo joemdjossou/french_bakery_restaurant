@@ -27,9 +27,12 @@ class FoodTile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             //image
-            Image.asset(
-              food.imagePath,
-              height: 140.0,
+            Hero(
+              tag: food.imagePath,
+              child: Image.asset(
+                food.imagePath,
+                height: 140.0,
+              ),
             ),
 
             //text

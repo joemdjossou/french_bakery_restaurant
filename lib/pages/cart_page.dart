@@ -25,6 +25,7 @@ class CartPage extends StatelessWidget {
         appBar: AppBar(
           leading: child,
           backgroundColor: primaryColor,
+          foregroundColor: Colors.white,
           elevation: 0.0,
           title: const Text(
             "My Cart",
