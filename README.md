@@ -17,6 +17,11 @@ Whether you're a seasoned connoisseur or a newcomer to French pastries, French B
 <img src="https://github.com/joemdjossou/french_bakery_restaurant/assets/123335804/601fa6b9-0db4-4897-a1c7-761eff4249a1" alt="French Bakery1" width="200" height="400" />
 
 Screenshot 1: Menu Page
+
+
+https://github.com/joemdjossou/french_bakery_restaurant/assets/123335804/3e60ea00-95f1-45dd-9c5d-14c663300edf
+
+Screen Recording : General Overview
   
 # Prerequisites
 Before running the app, ensure that you have the following installed:
