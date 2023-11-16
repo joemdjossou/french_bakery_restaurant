@@ -28,15 +28,15 @@ class MyButton extends StatelessWidget {
               text,
               style: GoogleFonts.dmSerifText(
                 fontSize: 20.0,
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.secondary,
               ),
             ),
             const SizedBox(
               height: 10.0,
             ),
-            const Icon(
+            Icon(
               Icons.arrow_forward_ios_sharp,
-              color: Colors.white,
+              color: Theme.of(context).colorScheme.secondary,
             )
           ],
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:frenchbreadrestaurant/components/button.dart';
 import 'package:frenchbreadrestaurant/models/bakery.dart';
 import 'package:frenchbreadrestaurant/models/food.dart';
@@ -23,13 +24,16 @@ class CartPage extends StatelessWidget {
       builder: (context, value, child) => Scaffold(
         backgroundColor: primaryColor,
         appBar: AppBar(
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarBrightness: Theme.of(context).colorScheme.brightness,
+          ),
           leading: child,
           backgroundColor: primaryColor,
-          foregroundColor: Colors.white,
+          foregroundColor: Theme.of(context).colorScheme.secondary,
           elevation: 0.0,
-          title: const Text(
+          title: Text(
             "My Cart",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Theme.of(context).colorScheme.secondary,),
           ),
         ),
         body: Column(
@@ -64,15 +68,15 @@ class CartPage extends StatelessWidget {
                     child: ListTile(
                       title: Text(
                         foodName,
-                        style: const TextStyle(
-                          color: Colors.white,
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.secondary,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       subtitle: Text(
                         '\$$foodPrice',
-                        style: const TextStyle(
-                          color: Colors.white,
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.secondary,
                         ),
                       ),
                       trailing: IconButton(

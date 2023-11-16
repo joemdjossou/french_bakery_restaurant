@@ -88,16 +88,17 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.secondary,
       appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarBrightness: Brightness.light,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).colorScheme.brightness,
         ),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         foregroundColor: primaryColor,
         title: Text(widget.food.name,
           style: GoogleFonts.dmSerifDisplay(
-            color: Colors.grey[900],),
+            color: Theme.of(context).colorScheme.primary,),
         ),
       ),
       body: Column(
@@ -165,7 +166,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                   Text(
                     'Description',
                     style: TextStyle(
-                      color: Colors.grey[800],
+                      color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.bold,
                       fontSize: 18.0,
                     ),
@@ -217,9 +218,9 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                             shape: BoxShape.circle,
                           ),
                           child: IconButton(
-                            icon: const Icon(
+                            icon: Icon(
                               Icons.remove,
-                              color: Colors.white,
+                              color: Theme.of(context).colorScheme.secondary,
                             ),
                             onPressed: decrementQuantity,
                           ),
@@ -247,9 +248,9 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                             shape: BoxShape.circle,
                           ),
                           child: IconButton(
-                            icon: const Icon(
+                            icon: Icon(
                               Icons.add,
-                              color: Colors.white,
+                              color: Theme.of(context).colorScheme.secondary,
                             ),
                             onPressed: incrementQuantity,
                           ),

@@ -4,6 +4,8 @@ import 'package:frenchbreadrestaurant/models/bakery.dart';
 import 'package:frenchbreadrestaurant/pages/cart_page.dart';
 import 'package:frenchbreadrestaurant/pages/intro_page.dart';
 import 'package:frenchbreadrestaurant/pages/menu_page.dart';
+import 'package:frenchbreadrestaurant/themes/dark_theme.dart';
+import 'package:frenchbreadrestaurant/themes/light_theme.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -25,6 +27,8 @@ class MyApp extends StatelessWidget {
       value: SystemUiOverlayStyle.light,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        theme: lightTheme,
+        darkTheme: darkTheme,
         home: const IntroPage(),
         routes: {
           '/intropage': (context) => const IntroPage(),

@@ -40,11 +40,13 @@ class _MenuPageState extends State<MenuPage> {
     final bakery = context.read<Bakery>();
     final foodMenu = bakery.foodMenu;
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(statusBarBrightness: Brightness.light,),
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).colorScheme.brightness,
+        ),
         backgroundColor: Colors.transparent,
-        foregroundColor: Colors.grey[800],
+        foregroundColor: Theme.of(context).colorScheme.primary,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.menu),
@@ -89,7 +91,7 @@ class _MenuPageState extends State<MenuPage> {
                         "Get 32% Promo",
                         style: GoogleFonts.dmSerifDisplay(
                           fontSize: 20,
-                          color: Colors.white,
+                          color: Theme.of(context).colorScheme.secondary,
                         ),
                       ),
 
@@ -120,19 +122,19 @@ class _MenuPageState extends State<MenuPage> {
           ),
 
           //search bar
-          const Padding(
-            padding: EdgeInsets.all(8.0),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
             child: TextField(
               decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
-                  borderRadius: BorderRadius.all(
+                  borderSide: BorderSide(color: Theme.of(context).colorScheme.secondary),
+                  borderRadius: const BorderRadius.all(
                     Radius.circular(20.0),
                   ),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
-                  borderRadius: BorderRadius.all(
+                  borderSide: BorderSide(color: Theme.of(context).colorScheme.secondary),
+                  borderRadius: const BorderRadius.all(
                     Radius.circular(20.0),
                   ),
                 ),
@@ -151,7 +153,7 @@ class _MenuPageState extends State<MenuPage> {
               'Food Menu',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Colors.grey[900],
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 18,
               ),
             ),
@@ -179,7 +181,7 @@ class _MenuPageState extends State<MenuPage> {
           //popular food
           Container(
             decoration: BoxDecoration(
-              color: Colors.grey[100],
+              color: Theme.of(context).colorScheme.secondary,//Colors.grey[100],
               borderRadius: BorderRadius.circular(40.0),
             ),
             margin: const EdgeInsets.only(
