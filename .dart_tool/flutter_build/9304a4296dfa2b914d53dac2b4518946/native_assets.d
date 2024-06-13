@@ -1,0 +1,1 @@
+ /Users/joemdjossou/Documents/GitHub/french_bakery_restaurant/.dart_tool/flutter_build/9304a4296dfa2b914d53dac2b4518946/native_assets.yaml: 
